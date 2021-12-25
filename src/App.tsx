@@ -7,7 +7,7 @@ import { globalData, setGlobalData, globalDataSubject } from "./global-data";
 function App() {
     return (
         <div style={{ width: "800px", margin: "25px auto" }}>
-            <div className="App">RxGlobal - Version 1</div>
+            <div className="App">RxGlobal - Version 2 (optimized re-rendering)</div>
             <hr />
             <About />
             <hr />

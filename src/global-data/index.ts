@@ -1,13 +1,17 @@
 import { BehaviorSubject } from "rxjs";
 
 interface GlobalDataObject {
-    pages: object;
-    posts: object;
+    pages: {
+        x: number | string;
+    };
+    posts: {
+        y: number | string;
+    };
 }
 
 export let globalData: GlobalDataObject = {
-    pages: {},
-    posts: {},
+    pages: {x:0},
+    posts: {y:0},
 };
 
 export const setGlobalData = (value: GlobalDataObject): void => {

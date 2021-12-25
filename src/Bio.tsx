@@ -25,13 +25,15 @@ const Bio = (props: any): JSX.Element => {
             <br />
             Please put down your name:
             <br />
-            <input
-                type="text"
-                value={props.globalData.posts.y ? props.globalData.posts.y : ""}
-                onChange={updatePageY}
-            />
+            <input type="text" value={props.y} onChange={updatePageY} />
         </div>
     );
 };
 
-export default GlobalDataWrapper(Bio);
+const mapStateToProps = (data: typeof globalData) => {
+    return {
+        y: data.posts.y ? data.posts.y : '',
+    };
+};
+
+export default GlobalDataWrapper(Bio, mapStateToProps);

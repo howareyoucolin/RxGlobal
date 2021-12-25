@@ -25,13 +25,15 @@ const About = (props: any): JSX.Element => {
             <br />
             Please put down your name:
             <br />
-            <input
-                type="text"
-                value={props.globalData.pages.x ? props.globalData.pages.x : ""}
-                onChange={updatePageX}
-            />
+            <input type="text" value={props.x} onChange={updatePageX} />
         </div>
     );
 };
 
-export default GlobalDataWrapper(About);
+const mapStateToProps = (data: typeof globalData) => {
+    return {
+        x: data.pages.x ? data.pages.x : '',
+    };
+};
+
+export default GlobalDataWrapper(About, mapStateToProps);
