@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import About from "./About";
+import Bio from "./Bio";
+import Contacts from "./Contacts";
+import { globalData, setGlobalData, globalDataSubject } from "./global-data";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div style={{ width: "800px", margin: "25px auto" }}>
+            <div className="App">RxGlobal - Version 1</div>
+            <hr />
+            <About />
+            <hr />
+            <Bio />
+            <hr />
+            <Contacts />
+        </div>
+    );
 }
 
 export default App;
