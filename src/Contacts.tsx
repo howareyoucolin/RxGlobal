@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import GlobalDataWrapper from "./global-data/wrapper";
+import GlobalDataWrapper from "./global-data/globalDataWrapper";
 
 const Contacts = (props: any): JSX.Element => {
     const renderCount = useRef(1);

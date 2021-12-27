@@ -1,15 +1,11 @@
 import React, { useRef, useEffect } from "react";
-import { setGlobalData, globalData } from "./global-data";
-import GlobalDataWrapper from "./global-data/wrapper";
+import { globalDataInterface } from "./global-data/globalData.interface";
+import { getPageX, setPageX } from "./global-data/models/pagesModel";
+import GlobalDataWrapper from "./global-data/globalDataWrapper";
 
 const updatePageX = (e: React.FormEvent<HTMLInputElement>): void => {
     const value: string = e.currentTarget.value;
-    setGlobalData({
-        ...globalData,
-        pages: {
-            x: value,
-        },
-    });
+    setPageX(value);
 };
 
 const About = (props: any): JSX.Element => {
@@ -30,9 +26,9 @@ const About = (props: any): JSX.Element => {
     );
 };
 
-const mapStateToProps = (data: typeof globalData) => {
+const mapStateToProps = (data: globalDataInterface) => {
     return {
-        x: data.pages.x ? data.pages.x : '',
+        x: getPageX(),
     };
 };
 

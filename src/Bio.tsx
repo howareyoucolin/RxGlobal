@@ -1,15 +1,11 @@
 import React, { useRef, useEffect } from "react";
-import { setGlobalData, globalData } from "./global-data";
-import GlobalDataWrapper from "./global-data/wrapper";
+import { globalDataInterface } from "./global-data/globalData.interface";
+import { getPostY, setPostY } from "./global-data/models/postsModel";
+import GlobalDataWrapper from "./global-data/globalDataWrapper";
 
-const updatePageY = (e: React.FormEvent<HTMLInputElement>): void => {
+const updatePageX = (e: React.FormEvent<HTMLInputElement>): void => {
     const value: string = e.currentTarget.value;
-    setGlobalData({
-        ...globalData,
-        posts: {
-            y: value,
-        },
-    });
+    setPostY(value);
 };
 
 const Bio = (props: any): JSX.Element => {
@@ -25,14 +21,14 @@ const Bio = (props: any): JSX.Element => {
             <br />
             Please put down your name:
             <br />
-            <input type="text" value={props.y} onChange={updatePageY} />
+            <input type="text" value={props.x} onChange={updatePageX} />
         </div>
     );
 };
 
-const mapStateToProps = (data: typeof globalData) => {
+const mapStateToProps = (data: globalDataInterface) => {
     return {
-        y: data.posts.y ? data.posts.y : '',
+        x: getPostY(),
     };
 };
 

@@ -1,0 +1,1 @@
+- how to resolve the global-data folder into a absolute path in react-create-app?
